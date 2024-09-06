@@ -1,0 +1,36 @@
+<div class="container">
+    <div class="row">
+        <h6 class="text-center">Product Management</h6>
+    </div>
+    <div class="row">
+        <div class="col-sm-2">
+            <button class="btn btn-primary" (click)="addNew()">New</button>
+        </div>
+        
+    </div>
+    <div class="row mt-2">
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                  <th scope="col">#</th>
+                  <th scope="col">Name</th>
+                  <th scope="col">Price</th>
+                  <th scope="col">Quantity</th>
+                  <th scope="col">Edit</th>
+                  <th scope="col">Delete</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let product of products" >
+                  <th scope="row">{{product.id}}</th>
+                  <td>{{product.name}}</td>
+                  <td>{{product.price}}</td>
+                  <td>{{product.quantity}}</td>
+                  <td><button type="button" class="btn btn-outline-secondary" (click)="editProduct(product.id)">Edit</button></td>
+                  <td><button type="button" class="btn btn-outline-secondary" (click)="deleteProduct(product.id)">Delete</button></td>
+                </tr>
+                                
+              </tbody>
+        </table>
+    </div>
+</div>
